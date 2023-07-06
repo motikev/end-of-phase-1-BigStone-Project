@@ -4,7 +4,7 @@
 BigStone is a website that offers potential constructors a solution to the difficulties they face when trying to obtain construction materials or house designs. The website provides users with a wide variety of building materials to choose from, estimated cost of materials, and a range of designs to pick.
 
 ## Author
-Kelvin Moti,
+Kelvin Moti Shombe,
 Junior Software Engineer From Nairobi Kenya.
 
 ## Year Created

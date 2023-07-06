@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BigStone - Construction Materials</title>
+	<!-- Include CSS and JavaScript files -->
+	<link rel="stylesheet" type="text/css" href="styling.css">
+</head>
+<body>
+	<header>
+		<!-- Navigation bar -->
+		<nav>
+            <h1>Welcome To BigStone Tech Innovations</h1>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="product.html">Products</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+		<!-- Homepage banner -->
+		<div id="banner">
+			<h1>BigStone</h1>
+			<h2>Construction materials and designs</h2>
+			<form>
+				<!-- Search bar -->
+				<input type="text" placeholder="Search for materials...">
+				<button type="submit">Search</button>
+			</form>
+		</div>
+	</header>
+	<main>
+		<!-- Featured products section on the homepage -->
+		<section id="featured">
+			<h3>Our Services</h3>
+			<ul>
+				<li>
+					<img src="./images folder/designs.jpg" alt="Product 1">
+					<h4>Exquisite Designs</h4>
+					<p>Our professionals will help with creating amazing housing designs</p>
+					<a href="product-details.html">View details</a>
+				</li>
+				<li>
+					<img src="./images folder/experts.jpg" alt="Product 2">
+					<h4>Our Expert Team</h4>
+					<p>A Team Composed of experts with overs 7 years of experience</p>
+					<a href="product-details.html">View details</a>
+				</li>
+				<li>
+					<img src="./images folder/pipes.jpg" alt="Product 3">
+					<h4>Building Accessories</h4>
+					<p>A variety of high-quality accessories for your construction</p>
+					<a href="product-details.html">View details</a>
+				</li>
+			</ul>
+		</section>
+		<!-- Product page -->
+		<section id="products">
+			<h3>Products</h3>
+			<!-- Filter options -->
+			<div id="filters">
+				<label for="category">Category:</label>
+				<select id="category">
+					<option value="all">All categories</option>
+					<option value="bricks">Pipes</option>
+                    <option value="bricks">Roofing Metal Sheets</option>
+                    <option value="bricks">Wires and Nails</option>
+                    <option value="bricks">Bricks</option>
+					<option value="cement">Cement</option>
+					<option value="wood">Wood</option>
+				</select>
+				<label for="sort">Sort by:</label>
+				<select id="sort">
+					<option value="price_asc">Price (maximum price)</option>
+					<option value="price_desc">Price (minimum price)</option>
+					<option value="rating">Rating</option>
+				</select>
+			</div>
+			<!-- Product list -->
+			<ul id="product-list">
+				<li>
+					<img src="./images folder/roofings.jpg" alt="Product 1">
+					<h4>Roofing Iron Sheets</h4>
+					<p>Metal sheets of varying gauges, color, and styles.</p>
+					<p class="price">@Ksh. 1000</p>
+					
+					<div class="rating">
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						
+					</div>
+					
+				</li>
+				<li>
+					<img src="./images folder/timber.avif" alt="Product 2">
+					<h4>Treated Timber</h4>
+					<p>All types of timber products in different shapes and sizes.</p>
+					<p class="price">@Ksh. 750</p>
+					
+					<div class="rating">
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star-empty"></span>
+						
+                        
+					</div>
+					
+				</li>
+				<li>
+					<img src="./images folder/nails.jpg" alt="nails">
+					<h4>Steel Nails</h4>
+					<p>We have all sizes of high-quality steel nails.</p>
+					<p class="price">@Ksh. 600</p>
+					
+					<div class="rating">
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star-empty"></span>
+						<span class="star-empty"></span>
+						<span class="star-empty"></span>
+						
+					</div>
+					
+				</li>
+				<li>
+					<img src="./images folder/cement.jpg" alt="cement">
+					<h4>Cement</h4>
+					<p>High-quality cement, sand, and ballast</p>
+					<p class="price">@Ksh. 1200</p>
+					
+					<div class="rating">
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						<span class="star"></span>
+						
+					</div>
+					
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<!-- Contact information -->
+		<div id="contacts">
+			<h4>Contact us</h4>
+			<ul>
+				<li><i class="fa fa-map-marker"></i>Kilimani, Nairobi Kenya</li>
+				<li><i class="fa fa-phone"></i>(+254) 123-4567</li>
+				<li><i class="fa fa-envelope"></i>info@bigstoneholdings.com</li>
+			</ul>
+		</div>
+		<!-- Social media links -->
+		<div id="social">
+			<h4>Follow us</h4>
+			<ul>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+			</ul>
+		</div>
+	</footer>
+    <script src="script.js"></script>
+</body>
+</html>
