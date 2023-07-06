@@ -1,0 +1,88 @@
+{
+    "materials": [
+      {
+        "id": 1,
+        "name": "Iron sheets",
+        "description": "Galvanized iron sheets",
+        "price": 1500,
+        "image": "https://example.com/iron-sheets.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Cement",
+        "description": "Portland cement",
+        "price": 800,
+        "image": "https://example.com/cement.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Nails",
+        "description": "Roofing nails",
+        "price": 250,
+        "image": "https://example.com/nails.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Paint",
+        "description": "Water-based paint",
+        "price": 2000,
+        "image": "https://example.com/paint.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Pipes",
+        "description": "PVC pipes",
+        "price": 300,
+        "image": "https://example.com/pipes.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Timber",
+        "description": "Pine timber",
+        "price": 1200,
+        "image": "https://example.com/timber.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Wires",
+        "description": "Electrical wires",
+        "price": 500,
+        "image": "https://example.com/wires.jpg",
+        "seller": {
+          "name": "BigStone Holdings",
+          "address": "Kilimani",
+          "email": "info@BigStoneholdings.com"
+        }
+      }
+    ]
+  }
