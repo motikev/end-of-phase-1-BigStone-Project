@@ -76,13 +76,15 @@ body {
   #featured ul {
     display: flex;
     flex-direction: column;
-
+    
   }
   
   #featured ul li {
     display: inline-block;
     margin-right: 20px;
-    vertical-align: top;
+    padding-bottom: 30px;
+
+    
     width: calc(33.33% - 20px);
     text-align: center;
   }
@@ -94,7 +96,7 @@ body {
   #featured h4 {
     font-size: 1.5rem;
     margin: 10px 0;
-    display: flex;
+    align-items: center;
   }
   
   #featured p {
@@ -155,18 +157,16 @@ body {
     font-size: 1rem;
     margin: 10px 0;
     line-height: 1.5;
+    
   }
   
   #product-list .price {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px ;
   }
   
-  #product-list .seller {
-    font-size: 1rem;
-    margin: 10px 0;
-  }
+  
   
   #product-list .rating {
     margin-top: 10px;
