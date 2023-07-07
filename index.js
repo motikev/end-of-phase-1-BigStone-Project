@@ -1,76 +1,60 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const searchInput = document.getElementById("searchInput");
-  const materialsList = document.getElementById("materialsList");
-  const designsList = document.getElementById("designsList");
-  const materialDetails = document.getElementById("materialDetails");
-  const costCalculator = document.getElementById("costCalculator");
+document.addEventListener('DOMContentLoaded', () => {
+  const apiUrl = 'http://localhost:3000';
+  const productList = document.getElementById('product-list');
+  const categorySelect = document.getElementById('category');
+  const searchButton = document.querySelector('#banner button[type="submit"]');
 
-  // Fetch building materials from the local API
-  function fetchMaterials() {
-    fetch("http://localhost:3000/materials")
-      .then(response => response.json())
-      .then(data => {
-        renderMaterials(data);
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again later.");
-      });
+  const fetchLocalData = async (endpoint) => {
+    const response = await fetch(`${apiUrl}/${endpoint}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
   }
 
-  // Render building materials list
-  function renderMaterials(materials) {
-    // Render the materials list dynamically
+  const renderListItems = (items) => {
+    productList.innerHTML = '';
+    if (items.length === 0) {
+      productList.textContent = 'No products found';
+      return;
+    }
+    const list = document.createElement('ul');
+    items.forEach(item => {
+      const listItem = document.createElement('li');
+      const image = new Image();
+      image.src = item.image;
+      image.alt = item.name;
+      const name = document.createElement('h4');
+      name.textContent = item.name;
+      const description = document.createElement('p');
+      description.textContent = item.description;
+      const price = document.createElement('p');
+      price.textContent = `@Ksh. ${item.price}`;
+      const rating = document.createElement('div');
+      rating.classList.add('rating');
+      for (let i = 0; i < 5; i++) {
+        const star = document.createElement('span');
+        star.classList.add('star', i >= item.rating ? 'star-empty' : 'star-filled');
+        rating.appendChild(star);
+      }
+      listItem.append(image, name, description, price, rating);
+      list.appendChild(listItem);
+    });
+    productList.appendChild(list);
   }
 
-  // Fetch designs from the local API
-  function fetchDesigns() {
-    fetch(" http://localhost:3000/materials")
-      .then(response => response.json())
-      .then(data => {
-        renderDesigns(data);
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again later.");
-      });
+  const filterProducts = async () => {
+    const category = categorySelect.value;
+    const endpoint = category === 'all' ? 'materials' : `materials?category=${category}`;
+    try {
+      const data = await fetchLocalData(endpoint);
+      renderListItems(data);
+    } catch (error) {
+      console.error(error);
+      productList.textContent = 'Error fetching products';
+    }
   }
 
-  // Render designs list
-  function renderDesigns(designs) {
-    // Render the designs list dynamically
-  }
-
-  // Fetch material details from the local API
-  function fetchMaterialDetails(materialId) {
-    fetch(` http://localhost:3000/materials/ ${materialId}`)
-      .then(response => response.json())
-      .then(data => {
-        renderMaterialDetails(data);
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again later.");
-      });
-  }
-
-  // Render material details
-  function renderMaterialDetails(material) {
-    // Render the material details dynamically
-  }
-
-  // Calculate cost
-  function calculateCost(materialId, quantity) {
-    // Calculate the cost based on material ID and quantity
-  }
-
-  // Event listeners
-  searchInput.addEventListener("keyup", function(event) {
-    const searchQuery = event.target.value;
-    // Implement search functionality
-  });
-
-  // Fetch data when the page loads
-  fetchMaterials();
-  fetchDesigns();
+  categorySelect.addEventListener('change', filterProducts);
+  searchButton.addEventListener('click', () => alert('Message sent'));
 });
