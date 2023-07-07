@@ -23,7 +23,7 @@
 			<h2>Construction materials and designs</h2>
 			<form>
 				<!-- Search bar -->
-				<input type="text" placeholder="Search for materials...">
+				<input type="text" id="searchInput" placeholder="Search for materials...">
 				<button type="submit">Search</button>
 			</form>
 		</div>
@@ -37,19 +37,19 @@
 					<img src="./images folder/designs.jpg" alt="Product 1">
 					<h4>Exquisite Designs</h4>
 					<p>Our professionals will help with creating amazing housing designs</p>
-					<a href="product-details.html">View details</a>
+					<a href="#exquisite-designs-details" id="exquisite-designs-link">View details</a>
 				</li>
 				<li>
 					<img src="./images folder/experts.jpg" alt="Product 2">
 					<h4>Our Expert Team</h4>
 					<p>A Team Composed of experts with overs 7 years of experience</p>
-					<a href="product-details.html">View details</a>
+					<a href="#expert-team-details" id="expert-team-link">View details</a>
 				</li>
 				<li>
 					<img src="./images folder/pipes.jpg" alt="Product 3">
 					<h4>Building Accessories</h4>
 					<p>A variety of high-quality accessories for your construction</p>
-					<a href="product-details.html">View details</a>
+					<a href="#building-accessories-details" id="building-accessories-link">View details</a>
 				</li>
 			</ul>
 		</section>
@@ -67,12 +67,6 @@
                     <option value="bricks">Bricks</option>
 					<option value="cement">Cement</option>
 					<option value="wood">Wood</option>
-				</select>
-				<label for="sort">Sort by:</label>
-				<select id="sort">
-					<option value="price_asc">Price (maximum price)</option>
-					<option value="price_desc">Price (minimum price)</option>
-					<option value="rating">Rating</option>
 				</select>
 			</div>
 			<!-- Product list -->
@@ -144,6 +138,24 @@
 				</li>
 			</ul>
 		</section>
+        <!-- Exquisite Designs Details section -->
+        <section id="exquisite-designs-details">
+            <h3>Exquisite Designs Details</h3>
+            <p>Here are more details about our exquisite designs:</p>
+            <!-- Add more content/details here -->
+        </section>
+        <!-- Our Expert Team Details section -->
+        <section id="expert-team-details">
+            <h3>Our Expert Team Details</h3>
+            <p>Here are more details about our expert team:</p>
+            <!-- Add more content/details here -->
+        </section>
+        <!-- Building Accessories Details section -->
+        <section id="building-accessories-details">
+            <h3>Building Accessories Details</h3>
+            <p>Here are more details about our building accessories:</p>
+            <!-- Add more content/details here -->
+        </section>
 	</main>
 	<footer>
 		<!-- Contact information -->
@@ -155,7 +167,7 @@
 				<li><i class="fa fa-envelope"></i>info@bigstoneholdings.com</li>
 			</ul>
 		</div>
-		<!-- Social media links -->
+		<!--Social media links -->
 		<div id="social">
 			<h4>Follow us</h4>
 			<ul>
