@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const productList = document.getElementById('product-list');
   const categorySelect = document.getElementById('category');
   const searchButton = document.querySelector('#banner button[type="submit"]');
+  const reviewForm = document.getElementById('review-form');
 
   const fetchLocalData = async (endpoint) => {
     const response = await fetch(`${apiUrl}/${endpoint}`);
@@ -30,7 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
       star.classList.add('star', i >= item.rating ? 'star-empty' : 'star-filled');
       rating.appendChild(star);
     }
-    listItem.append(image, name, description, price, rating);
+    const reviewForm = document.createElement('form');
+    reviewForm.innerHTML = `
+      <label for="review">Leave a review:</label>
+      <textarea id="review" name="review" required></textarea>
+      <button type="submit">Submit</button>
+    `;
+    reviewForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const review = event.target.elements.review.value;
+      const data = { productId: item.id, review };
+      postReview(data);
+    });
+    listItem.append(image, name, description, price, rating, reviewForm);
     listItem.classList.add('product-list-item');
     return listItem;
   }
@@ -47,6 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
       list.appendChild(listItem);
     });
     productList.appendChild(list);
+  }
+
+  const postReview = async (data) => {
+    try {
+      const response = await fetch(`${apiUrl}/reviews`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      alert('Review submitted successfully');
+    } catch (error) {
+      console.error(error);
+      alert('Error submitting review');
+    }
   }
 
   const filterProducts = async () => {
