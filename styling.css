@@ -57,16 +57,16 @@ nav a:hover {
 
 #banner h1 {
   font-size: 72px;
-  color: #fff;
+  color: #51b4b7;
   margin: 0;
-  text-shadow: 2px 2px #2E86C1;
+  text-shadow: 2px 2px #c5c94c;
 }
 
 #banner h2 {
   font-size: 36px;
-  color: #fff;
+  color: #b6c081;
   margin: 20px 0;
-  text-shadow: 2px 2px #2E86C1;
+  text-shadow: 2px 2px #b13754;
 }
 
 #banner form {
@@ -84,8 +84,8 @@ nav a:hover {
 
 #banner button[type="submit"] {
   padding: 10px 20px;
-  background-color: #F74B4B;
-  color: #fff;
+  background-color: #f74b73;
+  color: hsl(197, 41%, 93%);
   border: none;
   border-radius: 5px;
   margin-left: 10px;
@@ -107,7 +107,7 @@ nav a:hover {
   font-size: 36px;
   text-align: center;
   margin-bottom: 50px;
-  color: #F74B4B;
+  color: #d81a63;
 }
 
 #featured ul {
@@ -120,7 +120,7 @@ nav a:hover {
 #featured li {
   width: calc(33.33% - 20px);
   margin-bottom: 30px;
-  background-color: #fff;
+  background-color: #9ce4ed;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 30px;
   display: flex;
@@ -139,7 +139,7 @@ nav a:hover {
 #featured h4 {
   font-size: 24px;
   margin: 0 0 10px;
-  color: #333;
+  color: #f27f7f;
 }
 
 #featured p {
@@ -167,7 +167,7 @@ nav a:hover {
 /* Products page */
 #products {
   padding: 50px;
-  background-color: #F8F8F8;
+  background-color: #322f2f;
 }
 
 #products h3 {

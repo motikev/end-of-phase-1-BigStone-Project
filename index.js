@@ -12,6 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return await response.json();
   }
 
+  const createListItem = (item) => {
+    const listItem = document.createElement('li');
+    const image = new Image();
+    image.src = item.image;
+    image.alt = item.name;
+    const name = document.createElement('h4');
+    name.textContent = item.name;
+    const description = document.createElement('p');
+    description.textContent = item.description;
+    const price = document.createElement('p');
+    price.textContent = `@Ksh. ${item.price}`;
+    const rating = document.createElement('div');
+    rating.classList.add('rating');
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement('span');
+      star.classList.add('star', i >= item.rating ? 'star-empty' : 'star-filled');
+      rating.appendChild(star);
+    }
+    listItem.append(image, name, description, price, rating);
+    listItem.classList.add('product-list-item');
+    return listItem;
+  }
+
   const renderListItems = (items) => {
     productList.innerHTML = '';
     if (items.length === 0) {
@@ -20,24 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const list = document.createElement('ul');
     items.forEach(item => {
-      const listItem = document.createElement('li');
-      const image = new Image();
-      image.src = item.image;
-      image.alt = item.name;
-      const name = document.createElement('h4');
-      name.textContent = item.name;
-      const description = document.createElement('p');
-      description.textContent = item.description;
-      const price = document.createElement('p');
-      price.textContent = `@Ksh. ${item.price}`;
-      const rating = document.createElement('div');
-      rating.classList.add('rating');
-      for (let i = 0; i < 5; i++) {
-        const star = document.createElement('span');
-        star.classList.add('star', i >= item.rating ? 'star-empty' : 'star-filled');
-        rating.appendChild(star);
-      }
-      listItem.append(image, name, description, price, rating);
+      const listItem = createListItem(item);
       list.appendChild(listItem);
     });
     productList.appendChild(list);
